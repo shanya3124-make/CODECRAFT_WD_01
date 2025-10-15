@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <body style="text-align: center">
+    <h1>Demonstration of Event Handler using EventListener</h1>
+    <h3>Select a fruit</h3>
+    <select id="fruit">
+      <option>mango</option>
+      <option>orange</option>
+      <option>apple</option>
+      <option>Banana</option>
+    </select>
+    <h3>Select colors</h3>
+    <select id="colors" multiple size="3">
+      <option>Pink</option>
+      <option>Red</option>
+      <option>Blue</option>
+      <option>Black</option>
+    </select>
+    <p id="result 1"></p>
+    <p id="result 2"></p>
+    <script>
+      let fruit = " ";
+      let colors = [];
+
+      document.getElementById("fruit").addEventListener("change", function () {
+        fruit = this.value;
+        document.getElementById("result 1").innerText =
+          "selected fruit :" + fruit;
+      });
+      document.getElementById("colors").addEventListener("change", function () {
+        for (let i = 0; i < this.options.length; i++) {
+          if (this.options[i].selected) {
+            colors.push(this.options[i].value);
+            document.getElementById("result 2").innerText =
+              "selected colors :" + colors.join(", ");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

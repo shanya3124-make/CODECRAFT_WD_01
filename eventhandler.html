@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h3>select a fruit:</h3>
+    <select id="fruit">
+      <option>apple</option>
+      <option>orange</option>
+      <option>banana</option>
+    </select>
+    <h3>select colors:</h3>
+    <select id="color" multiple size="3">
+      <option>Red</option>
+      <option>black</option>
+      <option>brown</option>
+      <opriion>gray</opriion>
+    </select>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <script>
+      let fruit = " ";
+      let color = [];
+      document.getElementById("fruit").addEventListener("change", function () {
+        fruit = this.value;
+        document.getElementById("result1").innerText =
+          "selected fruit:" + fruit;
+      });
+      document.getElementById("color").addEventListener("change", function () {
+        for (let i = 0; i < this.options.length; i++) {
+          if (this.options[i].selected) {
+            color.push(this.options[i].value);
+            document.getElementById("result2").innerText =
+              "selected colors:" + color.join(",");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

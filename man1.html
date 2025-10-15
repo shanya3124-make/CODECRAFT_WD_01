@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <h2>manipulating zindex</h2><br><br>
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <button onclick="changezindex()">changezindex</button>
+        <script>
+            function changezindex(){
+                const b1=document.getElementById("box1");
+                const b2=document.getElementById("box2");
+                if(b1.style.zIndex==1){
+                    b1.style.zIndex=2;
+                    b2.style.zIndex=1;
+                }
+                else{
+                b1.style.zIndex=1;
+                b2.style.zIndex=2;
+            }
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3>Choose your preferences</h3>
+        <form id="PreferanceForm">
+            <fieldset>
+                <legend>Choose your fav color</legend>
+                <label>            
+                <input type="radio" name="color" value="red">Red</label><br>
+                <label> <input type="radio" name="color" value="green">Green</label><br>
+                <label ><input type="radio" name="color" value="blue">Blue</label><br>
+            </fieldset>
+            <fieldset>
+                <legend>Select ur hobbies</legend>
+                <label><input type="checkbox" name="hobbies" value="reading">Reading</label>
+                <label><input type="checkbox" name="hobbies" value="tavelling">Travelling</label>
+                <label><input type="checkbox" name="hobbies" value="coding">coding</label>
+                <label><input type="checkbox" name="hobbies" value="dancing">Dancing</label>
+            </fieldset>
+            <button type="button" onclick="showChoices()">Submit</button>
+
+        </form>
+        <h3>your selections</h3>
+        <div id="result"></div>
+        <script>
+            function showChoices(){
+                let selectedColor="";
+                const colors=document.getElementsByName("color");
+                for(let i=0;i<colors.length;i++){
+                    if(colors[i].checked){
+                        selectedColor=colors[i].value;
+                    }
+                }
+
+                let selectedHobbies=[];
+                const hobbies=documnet.getElementsByName("hobbies");
+                for(let i=0;i<hobbies.length;i++){
+                    if(hobbies[i].checked){
+                        selectedhobbies.push(hobbies[i].value);
+                    }
+                }
+                document.getElementById("result").innerHTML=`color:${slectedColor}<br>
+                hobbies:${selectedHobbies.join(',') || 'none'}`;
+            }
+
+        </script>
+    </body>
+</html>
